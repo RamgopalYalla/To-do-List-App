@@ -3,12 +3,10 @@ from django.http import HttpResponse
 from .models import ToDolist, Item
 
 
-# Create your views here.
-
 def index(response, id):
     ls = ToDolist.objects.get(id=id)
-    return render(response, "main/base.html", {})
+    return render(response, "webapp01/base.html", {"name": ls.name})
 
 
 def home(response):
-    return render(response, "main/base.html", {})
+    return render(response, "webapp01/home.html", {"name": "test"})
